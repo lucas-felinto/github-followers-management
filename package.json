@@ -1,0 +1,19 @@
+{
+  "name": "github-followers-management",
+  "version": "1.0.0",
+  "description": "GitHub Followers Management",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucas-felinto/github-followers-management.git"
+  },
+  "author": "Lucas Felinto",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lucas-felinto/github-followers-management/issues"
+  },
+  "homepage": "https://github.com/lucas-felinto/github-followers-management#readme"
+}
