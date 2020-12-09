@@ -15,8 +15,5 @@
   "bugs": {
     "url": "https://github.com/lucas-felinto/github-followers-management/issues"
   },
-  "homepage": "https://github.com/lucas-felinto/github-followers-management#readme",
-  "dependencies": {
-    "express": "^4.17.1"
-  }
+  "homepage": "https://github.com/lucas-felinto/github-followers-management#readme"
 }
