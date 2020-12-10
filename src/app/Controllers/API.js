@@ -1,5 +1,5 @@
 const axios = require('axios');
-const log = require('../../utils/logger');
+const Log = require('../../utils/logger');
 
 module.exports = {
   async getApi(req, res) {
@@ -12,6 +12,10 @@ module.exports = {
 
       const gitHubApi = `https://api.github.com/users/${user}`;
       const userApi = await axios.get(gitHubApi);
+
+      if (userApi.status === 403) {
+        return res.status(403).json('You have reached the request limit');
+      }
 
       if (!userApi) {
         return res.status(404).json('User not found');
@@ -31,7 +35,7 @@ module.exports = {
 
       return res.status(200).json(followersArray);
     } catch (e) {
-      log.error(`APIController - getApi Endpoint - ${e.message}`);
+      Log.error(`APIController - getApi Endpoint - ${e.message}`);
       return res.status(500).json(e.message);
     }
   }
