@@ -1,5 +1,5 @@
 const axios = require('axios');
-const { logger } = require('../../utils/loggers');
+const { logger } = require('../../utils/logger');
 
 module.exports = {
   async getApi(req, res) {
