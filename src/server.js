@@ -4,6 +4,4 @@ const server = express();
 
 server.use(routes);
 
-server.listen(3000, () => {
-  console.log('server is running');
-});
+server.listen(3000, () => console.log('server is running'));

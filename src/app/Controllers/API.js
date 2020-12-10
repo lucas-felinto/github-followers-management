@@ -1,4 +1,5 @@
 const axios = require('axios');
+const { logger } = require('../../utils/logger');
 
 module.exports = {
   async getApi(req, res) {
@@ -35,6 +36,7 @@ module.exports = {
       
       return res.status(200).json(followers);
     } catch (e) {
+      logger.error(`APIController - getApi Endpoint - ${e.message}`);
       return res.status(500).json(e.message);
     }
   }
