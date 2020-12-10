@@ -1,5 +1,5 @@
 const axios = require('axios');
-const { logger } = require('../../utils/logger');
+const log = require('../../utils/logger');
 
 module.exports = {
   async getApi(req, res) {
@@ -18,25 +18,20 @@ module.exports = {
       }
 
       const followersNumber = userApi.data.followers;
-      const followersPerPage = 30;
+      const followersPerPage = 100;
       const pages = Math.round(followersNumber/followersPerPage);
 
       const followersArray = [];
-      const followers = [];
 
       for (let i = 1; i <= pages; i++) {
-        const followersByPage = await axios.get(`https://api.github.com/users/${user}/followers?page=${i}`);
+        const followersByPage = await axios.get(`https://api.github.com/users/${user}/followers?per_page=${followersPerPage}&page=${i}`);
 
         followersArray.push(followersByPage.data);
       }
 
-      for (let data of followers) {
-        followers.push(data);
-      }
-      
-      return res.status(200).json(followers);
+      return res.status(200).json(followersArray);
     } catch (e) {
-      logger.error(`APIController - getApi Endpoint - ${e.message}`);
+      log.error(`APIController - getApi Endpoint - ${e.message}`);
       return res.status(500).json(e.message);
     }
   }
