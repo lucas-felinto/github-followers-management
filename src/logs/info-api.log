@@ -4,3 +4,7 @@ info: server is running on port 3000
 error: APIController - getApi Endpoint - Request failed with status code 403
 error: APIController - getApi Endpoint - Request failed with status code 403
 error: APIController - getApi Endpoint - Request failed with status code 403
+error: APIController - getApi Endpoint - Assignment to constant variable.
+error: APIController - getApi Endpoint - this.getUsers is not a function
+error: APIController - getApi Endpoint - this.getUsers is not a function
+error: APIController - getApi Endpoint - getUsers is not a function
