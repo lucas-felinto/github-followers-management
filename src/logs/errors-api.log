@@ -5,3 +5,22 @@ error: APIController - getApi Endpoint - Assignment to constant variable.
 error: APIController - getApi Endpoint - this.getUsers is not a function
 error: APIController - getApi Endpoint - this.getUsers is not a function
 error: APIController - getApi Endpoint - getUsers is not a function
+error: APIController - getApi Endpoint - this.getUsers is not a function
+error: APIController - getApi Endpoint - this.getUsers is not a function
+error: APIController - getApi Endpoint - this.getUsers is not a function
+error: APIController - getApi Endpoint - this.getUsers is not a function
+error: APIController - getApi Endpoint - params is not defined
+error: APIController - getApi Endpoint - this.getUsers is not a function
+error: APIController - getApi Endpoint - getUsers is not defined
+error: APIController - getApi Endpoint - params is not defined
+error: APIController - getApi Endpoint - this.getUsers is not a function
+error: APIController - getApi Endpoint - params is not defined
+error: APIController - getApi Endpoint - this.function is not a function
+error: APIController - getApi Endpoint - this.getUsers is not a function
+error: APIController - getUsers Endpoint - user.push is not a function
+error: APIController - getApi Endpoint - json is not defined
+error: APIController - getApi Endpoint - Converting circular structure to JSON
+    --> starting at object with constructor 'ClientRequest'
+    |     property 'socket' -> object with constructor 'TLSSocket'
+    --- property '_httpMessage' closes the circle
+error: APIController - getApi Endpoint - usersFollowYouBack[0] is not iterable
