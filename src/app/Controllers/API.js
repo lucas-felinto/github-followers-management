@@ -21,6 +21,24 @@ module.exports = {
         return res.status(404).json('User not found');
       }
 
+      const getUsers = async function(params) {
+        try {
+          const pages = Math.round(params.usersNumber/params.usersPerPage);
+          const users = [];
+    
+          for (let i = 1; i <= pages; i++) {
+            const followersByPage = await axios.get(`https://api.github.com/users/${params.user}/${params.usersStatus}?per_page=${params.usersPerPage}&page=${i}`);
+    
+            users.push(followersByPage.data);
+          }
+          
+          return users;  
+        } catch (e) {
+          Log.error(`APIController - getUsers Function - ${e.message}`);
+          return json('Cannot get users:', e.message);
+        }
+      }
+
       let params = {
         usersNumber: userApi.data.followers,
         usersPerPage: 100,
@@ -28,7 +46,7 @@ module.exports = {
         usersStatus: 'followers'
       }
 
-      const followers = await this.getUsers(params);
+      const followers = await getUsers(params);
 
       params = {
         usersNumber: userApi.data.following,
@@ -37,44 +55,47 @@ module.exports = {
         usersStatus: 'following'
       }
 
-      const following = this.getUsers(params);
+      const following = await getUsers(params);
 
-      // if (followers.length > 1) {
-      //   for (let array of followers) {
-      //     // novo for verificando com quem está seguindo quem te segue ou não ou um filter
-      //     console.log(array)
-      //   }
-      // } else {
-      //   // fazer um for apenas verificando com quem está seguindo
-      //   followers.push(followersArray[0]);
-      // }
+      // O CÓDIGO ABAIXO DEVE SER REESTRUTURADO E VALIDADO.
 
-      return res.status(200).json(following);
+      const usersFollowYouBack = [];
+
+      for (let followerUser of followers[0]) {
+        for (let followingUser of following[0]) {
+          if (followerUser.login === followingUser.login) {
+            usersFollowYouBack.push(followingUser);
+          }
+        }
+      }
+
+      const usersNotFollowYouBack = following[0].filter(user => {
+        for (let userFollowsYou of usersFollowYouBack) {
+          if (user.login !== userFollowsYou.login) return
+        }
+      });
+
+      const usersYouFollowBack = [];
+
+      for (let followerUser of followers[0]) {
+        for (let followingUser of following[0]) {
+          if (followerUser.login === followingUser.login) {
+            usersYouFollowBack.push(followerUser);
+          }
+        }
+      }
+
+      const usersYoutNotFollowBack = followers[0].find(user => {
+          if (user.login !== usersYouFollowBack.find(userYouFollow => {
+            userYouFollow.login !== user.login 
+          })) return user
+      });
+
+      return res.status(200).json(usersYoutNotFollowBack);
     } catch (e) {
       console.log(e)
       Log.error(`APIController - getApi Endpoint - ${e.message}`);
       return res.status(500).json(e.message);
     }
-  },
-
-  async getUsers(params) {
-    try {
-      console.log(params)
-      const users = [];
-      const pages = Math.round(params.usersNumber/params.usersPerPage);
-
-      for (let i = 1; i <= pages; i++) {
-        const followersByPage = await axios.get(`https://api.github.com/users/${params.user}/${params.usersStatus}?per_page=${params.usersPerPage}&page=${i}`);
-
-        users.push(followersByPage.data);
-      }
-
-      return users;  
-    } catch (e) {
-      console.log(e)
-      Log.error(`APIController - getUsers Endpoint - ${e.message}`);
-      return res.status(500).json(e.message);
-    }
   }
 }
-  
