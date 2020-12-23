@@ -57,41 +57,21 @@ module.exports = {
 
       const following = await getUsers(params);
 
-      // O CÓDIGO ABAIXO DEVE SER REESTRUTURADO E VALIDADO.
+      
 
-      const usersFollowYouBack = [];
+      const usersNotFollowYouBack = [];
 
-      for (let followerUser of followers[0]) {
-        for (let followingUser of following[0]) {
-          if (followerUser.login === followingUser.login) {
-            usersFollowYouBack.push(followingUser);
-          }
+      for (let followingUser of following[0]) {
+        let FollowYou = followers[0].find(user => 
+          user.login === followingUser.login
+        );
+
+        if (!FollowYou) {
+          usersNotFollowYouBack.push(followingUser);
         }
       }
 
-      const usersNotFollowYouBack = following[0].filter(user => {
-        for (let userFollowsYou of usersFollowYouBack) {
-          if (user.login !== userFollowsYou.login) return
-        }
-      });
-
-      const usersYouFollowBack = [];
-
-      for (let followerUser of followers[0]) {
-        for (let followingUser of following[0]) {
-          if (followerUser.login === followingUser.login) {
-            usersYouFollowBack.push(followerUser);
-          }
-        }
-      }
-
-      const usersYoutNotFollowBack = followers[0].find(user => {
-          if (user.login !== usersYouFollowBack.find(userYouFollow => {
-            userYouFollow.login !== user.login 
-          })) return user
-      });
-
-      return res.status(200).json(usersYoutNotFollowBack);
+      return res.status(200).json(usersNotFollowYouBack);
     } catch (e) {
       console.log(e)
       Log.error(`APIController - getApi Endpoint - ${e.message}`);

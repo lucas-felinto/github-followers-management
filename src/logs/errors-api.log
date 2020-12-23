@@ -24,3 +24,4 @@ error: APIController - getApi Endpoint - Converting circular structure to JSON
     |     property 'socket' -> object with constructor 'TLSSocket'
     --- property '_httpMessage' closes the circle
 error: APIController - getApi Endpoint - usersFollowYouBack[0] is not iterable
+error: APIController - getApi Endpoint - usersYouFollowBack is not defined
