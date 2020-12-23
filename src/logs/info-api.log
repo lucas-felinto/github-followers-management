@@ -28,3 +28,8 @@ error: APIController - getApi Endpoint - Converting circular structure to JSON
     --- property '_httpMessage' closes the circle
 error: APIController - getApi Endpoint - usersFollowYouBack[0] is not iterable
 error: APIController - getApi Endpoint - usersYouFollowBack is not defined
+error: APIController - getUsersNotFollowYouBack Endpoint - this.getApi is not a function
+error: APIController - getApi Endpoint - Request failed with status code 404
+error: APIController - getApi Endpoint - Cannot read property 'push' of undefined
+error: APIController - getUsersNotFollowYouBack Endpoint - this.getApi is not a function
+error: APIController - getUsersYouNotFollowBack Endpoint - followingUser is not defined
