@@ -20,7 +20,6 @@ module.exports = {
 
       return res.status(200).json(usersNotFollowYouBack);
     } catch (e) {
-      console.log(e)
       Log.error(`APIController - getUsersNotFollowYouBack Endpoint - ${e.message}`);
       return res.status(500).json(e.message);
     }
