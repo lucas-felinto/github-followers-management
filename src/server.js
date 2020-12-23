@@ -1,7 +1,7 @@
 const express = require('express');
 const routes = require('./routes')
-const server = express();
+const app = express();
 
-server.use(routes);
+app.use('/api/v1', routes);
 
-server.listen(3000, () => console.log('server is running'));
+app.listen(3000, () => console.log('server is running'));
