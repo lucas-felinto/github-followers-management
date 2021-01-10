@@ -1,4 +1,3 @@
-const axios = require('axios');
 const Log = require('../../utils/logger');
 
 module.exports = {
@@ -8,8 +7,8 @@ module.exports = {
 
       const usersNotFollowYouBack = [];
 
-      for (let followingUser of apiData.following[0]) {
-        let FollowYou = apiData.followers[0].find(user => 
+      for (let followingUser of apiData.following) {
+        let FollowYou = apiData.followers.find(user => 
           user.login === followingUser.login
         );
 
@@ -31,8 +30,8 @@ module.exports = {
 
       const usersYoutNotFollowBack = [];
 
-      for (let followUser of apiData.followers[0]) {
-        let FollowYou = apiData.following[0].find(user => 
+      for (let followUser of apiData.followers) {
+        let FollowYou = apiData.following.find(user => 
           user.login === followUser.login
         );
 

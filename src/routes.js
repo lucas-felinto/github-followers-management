@@ -1,6 +1,6 @@
 const express = require('express');
-const APIController = require('./app/Controllers/API');
-const APIMiddleware = require('./app/Middlewares/API');
+const APIController = require('./api/Controllers/APIController');
+const APIMiddleware = require('./api/Middlewares/APIMiddleware');
 
 const Routes = express.Router();
 
