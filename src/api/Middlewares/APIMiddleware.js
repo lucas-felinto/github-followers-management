@@ -24,7 +24,8 @@ module.exports = {
 
       const getUsers = async function(params) {
         try {
-          const pages = Math.round(params.usersNumber/params.usersPerPage);
+          const pages = Math.ceil(params.usersNumber/params.usersPerPage);
+
           const users = [];
     
           for (let i = 1; i <= pages; i++) {
@@ -40,15 +41,28 @@ module.exports = {
         }
       }
 
-      let params = {
+      let params;
+      let usersArray;
+
+      params = {
         usersNumber: userApi.data.followers,
         usersPerPage: 100,
         user: user,
         usersStatus: 'followers'
       }
 
-      apiData.followers = await getUsers(params);
+      let followersArray = [];
       
+      usersArray = await getUsers(params);
+
+      for (let i = 0; i < usersArray.length; i++) {
+        for (let obj of usersArray[i]) {
+          followersArray.push(obj)
+        }
+      }
+
+      apiData.followers = followersArray;
+
       params = {
         usersNumber: userApi.data.following,
         usersPerPage: 100,
@@ -56,7 +70,17 @@ module.exports = {
         usersStatus: 'following'
       }
 
-      apiData.following = await getUsers(params);
+      let followingArray = [];
+
+      usersArray = await getUsers(params);
+
+      for (let i = 0; i < usersArray.length; i++) {
+        for (let obj of usersArray[i]) {
+          followingArray.push(obj)
+        }
+      }
+
+      apiData.following = followingArray;
 
       req.apiData = apiData;
 
