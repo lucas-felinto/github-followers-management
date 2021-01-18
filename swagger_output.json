@@ -1,0 +1,175 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "GitHub Followers Management API",
+    "description": "API to discover user you follow, but don't follow you back, or to discover users who follows you, but you don't follow back"
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "tags": [],
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "securityDefinitions": {},
+  "consumes": [],
+  "produces": [],
+  "paths": {
+    "/api/v1/not-follow-you": {
+      "get": {
+        "tags": [],
+        "summary": "Returns a users list who don't follow you back",
+        "description": "",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "query",
+            "required": true,
+            "description": "Your GitHub's user"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {
+              "application/json": [{
+                "login": "octocat",
+                "id": 1,
+                "node_id": "MDQ6VXNlcjE=",
+                "avatar_url": "https://github.com/images/error/octocat_happy.gif",
+                "gravatar_id": "",
+                "url": "https://api.github.com/users/octocat",
+                "html_url": "https://github.com/octocat",
+                "followers_url": "https://api.github.com/users/octocat/followers",
+                "following_url": "https://api.github.com/users/octocat/following{/other_user}",
+                "gists_url": "https://api.github.com/users/octocat/gists{/gist_id}",
+                "starred_url": "https://api.github.com/users/octocat/starred{/owner}{/repo}",
+                "subscriptions_url": "https://api.github.com/users/octocat/subscriptions",
+                "organizations_url": "https://api.github.com/users/octocat/orgs",
+                "repos_url": "https://api.github.com/users/octocat/repos",
+                "events_url": "https://api.github.com/users/octocat/events{/privacy}",
+                "received_events_url": "https://api.github.com/users/octocat/received_events",
+                "type": "User",
+                "site_admin": false
+              },
+              {
+              "login": "lucas-felinto",
+              "id": 62717182,
+              "node_id": "MDQ6VXNlcjYyNzE3MTgy",
+              "avatar_url": "https://avatars3.githubusercontent.com/u/62717182?v=4",
+              "gravatar_id": "",
+              "url": "https://api.github.com/users/lucas-felinto",
+              "html_url": "https://github.com/lucas-felinto",
+              "followers_url": "https://api.github.com/users/lucas-felinto/followers",
+              "following_url": "https://api.github.com/users/lucas-felinto/following{/other_user}",
+              "gists_url": "https://api.github.com/users/lucas-felinto/gists{/gist_id}",
+              "starred_url": "https://api.github.com/users/lucas-felinto/starred{/owner}{/repo}",
+              "subscriptions_url": "https://api.github.com/users/lucas-felinto/subscriptions",
+              "organizations_url": "https://api.github.com/users/lucas-felinto/orgs",
+              "repos_url": "https://api.github.com/users/lucas-felinto/repos",
+              "events_url": "https://api.github.com/users/lucas-felinto/events{/privacy}",
+              "received_events_url": "https://api.github.com/users/lucas-felinto/received_events",
+              "type": "User",
+              "site_admin": false
+              }]
+            }
+          },
+          "400": {
+            "description": "Returns an error if not insert the user",
+            "examples": {
+              "application/json": "User is required"
+            }
+          },
+          "404": {
+            "description": "Returns an error if user provided not found",
+            "examples": {
+              "application/json": "User not found"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/you-not-follow": {
+      "get": {
+        "tags": [],
+        "summary": "Returns a users list who follow back, but you don't follow back",
+        "description": "",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "query",
+            "required": true,
+            "description": "Your GitHub's user"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {
+              "application/json": [{
+                "login": "octocat",
+                "id": 1,
+                "node_id": "MDQ6VXNlcjE=",
+                "avatar_url": "https://github.com/images/error/octocat_happy.gif",
+                "gravatar_id": "",
+                "url": "https://api.github.com/users/octocat",
+                "html_url": "https://github.com/octocat",
+                "followers_url": "https://api.github.com/users/octocat/followers",
+                "following_url": "https://api.github.com/users/octocat/following{/other_user}",
+                "gists_url": "https://api.github.com/users/octocat/gists{/gist_id}",
+                "starred_url": "https://api.github.com/users/octocat/starred{/owner}{/repo}",
+                "subscriptions_url": "https://api.github.com/users/octocat/subscriptions",
+                "organizations_url": "https://api.github.com/users/octocat/orgs",
+                "repos_url": "https://api.github.com/users/octocat/repos",
+                "events_url": "https://api.github.com/users/octocat/events{/privacy}",
+                "received_events_url": "https://api.github.com/users/octocat/received_events",
+                "type": "User",
+                "site_admin": false
+              },
+              {
+                "login": "lucas-felinto",
+                "id": 62717182,
+                "node_id": "MDQ6VXNlcjYyNzE3MTgy",
+                "avatar_url": "https://avatars3.githubusercontent.com/u/62717182?v=4",
+                "gravatar_id": "",
+                "url": "https://api.github.com/users/lucas-felinto",
+                "html_url": "https://github.com/lucas-felinto",
+                "followers_url": "https://api.github.com/users/lucas-felinto/followers",
+                "following_url": "https://api.github.com/users/lucas-felinto/following{/other_user}",
+                "gists_url": "https://api.github.com/users/lucas-felinto/gists{/gist_id}",
+                "starred_url": "https://api.github.com/users/lucas-felinto/starred{/owner}{/repo}",
+                "subscriptions_url": "https://api.github.com/users/lucas-felinto/subscriptions",
+                "organizations_url": "https://api.github.com/users/lucas-felinto/orgs",
+                "repos_url": "https://api.github.com/users/lucas-felinto/repos",
+                "events_url": "https://api.github.com/users/lucas-felinto/events{/privacy}",
+                "received_events_url": "https://api.github.com/users/lucas-felinto/received_events",
+                "type": "User",
+                "site_admin": false
+                }]
+            }
+          },
+          "400": {
+            "description": "Returns an error if not insert the user",
+            "examples": {
+              "application/json": "User is required"
+            }
+          },
+          "404": {
+            "description": "Returns an error if user provided not found",
+            "examples": {
+              "application/json": "User not found"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {}
+}

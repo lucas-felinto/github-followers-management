@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon",
     "nodemon": "nodemon src/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "swagger-autogen": "node swagger.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,9 @@
     "axios": "^0.21.0",
     "express": "^4.17.1",
     "request": "^2.88.2",
+    "swagger-autogen": "^2.4.1",
+    "swagger-jsdoc": "^6.0.1",
+    "swagger-ui-express": "^4.1.6",
     "winston": "^3.3.3"
   },
   "devDependencies": {
