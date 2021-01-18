@@ -33,3 +33,10 @@ error: APIController - getApi Endpoint - Request failed with status code 404
 error: APIController - getApi Endpoint - Cannot read property 'push' of undefined
 error: APIController - getUsersNotFollowYouBack Endpoint - this.getApi is not a function
 error: APIController - getUsersYouNotFollowBack Endpoint - followingUser is not defined
+info: [object Object]
+info: [object Object]
+error: APIController - getUsersYouNotFollowBack Endpoint - apiData.followers[0] is not iterable
+error: APIMiddleware - getUsers Function - Request failed with status code 403
+error: APIMiddleware - getApi Endpoint - json is not defined
+error: APIController - getUsersNotFollowYouBack Endpoint - apiData.following[0] is not iterable
+error: APIController - getUsersNotFollowYouBack Endpoint - apiData.following[0] is not iterable
