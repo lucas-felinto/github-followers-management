@@ -39,27 +39,28 @@ This is a project to help the GitHub community, use and try the GitHub Developer
 
 ## :seedling: Minimal Requirements
 
-Node with npm or yarn or Docker.
+- [Node v8+](https://nodejs.org/en/docs/) or [Docker](https://docs.docker.com/)
+- [NPM](https://www.npmjs.com/) or [Yarn](https://classic.yarnpkg.com/en/docs/).
 
 ## :rocket: Technologies
 
-O projeto foi desenvolvido utilizando as seguintes tecnologias
+This API was developed using the following technologies:
 
-- Node.js
-- Express.js
-- Docker
-- Docker-compose
-- Swagger
+- [Node.js](https://nodejs.org/en/docs/)
+- [Express.js](https://expressjs.com/pt-br/)
+- [Docker](https://docs.docker.com/)
+- [Docker-compose](https://docs.docker.com/compose/compose-file/)
+- [Swagger](https://swagger.io/docs/specification/about/)
 
 ## :link: How To Contribute
 
-- Faça um Fork do repositório
-- Clone o seu repositório
-- Crie uma branch com a sua feature
-- Faça um commit com suas mudanças
-- 'Push' a sua branch
-- Ir em Pull Requests do projeto original e criar uma pull request com o seu commit
+- Fork the repository
+- Git clone your forked repository
+- Create a branch with your feature
+- Commiy your changes
+- Push your changes
+- Open a pull request in this repository with your branch
 
 ## License 
 
-Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+This project is under MIT license. See the documentation [LICENSE](LICENSE) for details.
