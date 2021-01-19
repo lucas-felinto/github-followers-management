@@ -51,6 +51,7 @@ This API was developed using the following technologies:
 - [Docker](https://docs.docker.com/)
 - [Docker-compose](https://docs.docker.com/compose/compose-file/)
 - [Swagger](https://swagger.io/docs/specification/about/)
+- [GitHub API](https://docs.github.com/)
 
 ## :link: How To Contribute
 
