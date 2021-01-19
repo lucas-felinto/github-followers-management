@@ -4,6 +4,7 @@ ___
 
 <p align="center">
   <img src="https://cdn.iconscout.com/icon/free/png-256/github-brand-logo-47401.png" width="100" heigth="100">
+  <img src="https://i.dlpng.com/static/png/6210243-follower-instagram-notification-icon-follower-png-512_512_preview.png" width="100" heigth="100">
 </p>
 
 
