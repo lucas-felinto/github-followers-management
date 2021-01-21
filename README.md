@@ -31,6 +31,8 @@ ___
 </h4>
 
 ___
+[Click here do consult the API documentation](https://github-followers-management.herokuapp.com/api/v1/documentation/)
+___
 
 ## :information_source: About
 
