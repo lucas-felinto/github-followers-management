@@ -19,17 +19,18 @@ ___
 
 ___
 
-<h3 align="center">
+<h4 align="center">
   <a href="#information_source-about">Abou</a>&nbsp;|&nbsp;
   <a href="#interrobang-reason">Why this project</a>&nbsp;|&nbsp;
   <a href="#seedling-minimal-requirements">Minimal Requirements</a>&nbsp;|&nbsp;
   <a href="#rocket-technologies">Technologies</a>&nbsp;|&nbsp;
+  <a href="#wrench-install">Install</a>&nbsp;|&nbsp;
+  <a href="#arrow_right_hook-requests">Requests</a>&nbsp;|&nbsp;
   <a href="#link-how-to-contribute">How To Contribute</a>&nbsp;|&nbsp;
   <a href="#license">License</a>
-</h3>
+</h4>
 
 ___
-
 
 ## :information_source: About
 
@@ -55,6 +56,116 @@ This API was developed using the following technologies:
 - [Docker-compose](https://docs.docker.com/compose/compose-file/)
 - [Swagger](https://swagger.io/docs/specification/about/)
 - [GitHub API](https://docs.github.com/)
+
+## :wrench: Install
+```bash
+# Cloning the repository
+git clone https://github.com/lucas-felinto/github-followers-management.git
+
+# Changing the directory
+cd github-followers-management
+
+# Start the application
+npm start or docker-compose up
+```
+
+## :arrow_right_hook: Requests
+- GET `/api/v1/not-follow-you` 
+- Returns a users list who don't follow you back
+- Example Request: `/api/v1/not-follow-you?user=octocat`
+```json
+Code: 200 OK
+[
+  {
+    "login": "octocat",
+    "id": 1,
+    "node_id": "MDQ6VXNlcjE=",
+    "avatar_url": "https://github.com/images/error/octocat_happy.gif",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/octocat",
+    "html_url": "https://github.com/octocat",
+    "followers_url": "https://api.github.com/users/octocat/followers",
+    "following_url": "https://api.github.com/users/octocat/following{/other_user}",
+    "gists_url": "https://api.github.com/users/octocat/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/octocat/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/octocat/subscriptions",
+    "organizations_url": "https://api.github.com/users/octocat/orgs",
+    "repos_url": "https://api.github.com/users/octocat/repos",
+    "events_url": "https://api.github.com/users/octocat/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/octocat/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  {
+    "login": "lucas-felinto",
+    "id": 62717182,
+    "node_id": "MDQ6VXNlcjYyNzE3MTgy",
+    "avatar_url": "https://avatars3.githubusercontent.com/u/62717182?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/lucas-felinto",
+    "html_url": "https://github.com/lucas-felinto",
+    "followers_url": "https://api.github.com/users/lucas-felinto/followers",
+    "following_url": "https://api.github.com/users/lucas-felinto/following{/other_user}",
+    "gists_url": "https://api.github.com/users/lucas-felinto/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/lucas-felinto/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/lucas-felinto/subscriptions",
+    "organizations_url": "https://api.github.com/users/lucas-felinto/orgs",
+    "repos_url": "https://api.github.com/users/lucas-felinto/repos",
+    "events_url": "https://api.github.com/users/lucas-felinto/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/lucas-felinto/received_events",
+    "type": "User",
+    "site_admin": false
+  }
+]
+```
+- GET `/api/v1/you-not-follow` 
+- Returns a users list who follows you, but you don't follow back
+- Example Request: `/api/v1/you-not-follow?user=octocat`
+```json
+Code: 200 OK
+[
+  {
+    "login": "octocat",
+    "id": 1,
+    "node_id": "MDQ6VXNlcjE=",
+    "avatar_url": "https://github.com/images/error/octocat_happy.gif",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/octocat",
+    "html_url": "https://github.com/octocat",
+    "followers_url": "https://api.github.com/users/octocat/followers",
+    "following_url": "https://api.github.com/users/octocat/following{/other_user}",
+    "gists_url": "https://api.github.com/users/octocat/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/octocat/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/octocat/subscriptions",
+    "organizations_url": "https://api.github.com/users/octocat/orgs",
+    "repos_url": "https://api.github.com/users/octocat/repos",
+    "events_url": "https://api.github.com/users/octocat/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/octocat/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  {
+    "login": "lucas-felinto",
+    "id": 62717182,
+    "node_id": "MDQ6VXNlcjYyNzE3MTgy",
+    "avatar_url": "https://avatars3.githubusercontent.com/u/62717182?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/lucas-felinto",
+    "html_url": "https://github.com/lucas-felinto",
+    "followers_url": "https://api.github.com/users/lucas-felinto/followers",
+    "following_url": "https://api.github.com/users/lucas-felinto/following{/other_user}",
+    "gists_url": "https://api.github.com/users/lucas-felinto/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/lucas-felinto/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/lucas-felinto/subscriptions",
+    "organizations_url": "https://api.github.com/users/lucas-felinto/orgs",
+    "repos_url": "https://api.github.com/users/lucas-felinto/repos",
+    "events_url": "https://api.github.com/users/lucas-felinto/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/lucas-felinto/received_events",
+    "type": "User",
+    "site_admin": false
+  }
+]
+```
 
 ## :link: How To Contribute
 
