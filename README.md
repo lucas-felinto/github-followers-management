@@ -65,6 +65,9 @@ git clone https://github.com/lucas-felinto/github-followers-management.git
 # Changing the directory
 cd github-followers-management
 
+## Install the dependencies
+npm install
+
 # Start the application
 npm start or docker-compose up
 ```
