@@ -11,6 +11,9 @@ ___
 <p align="center">
   <a href="LICENSE">
     <img alt="License" src="https://img.shields.io/badge/license-MIT-%23F8952D">
+    <img src="https://img.shields.io/github/languages/top/lucas-felinto/github-followers-management"/>
+    <img src="https://img.shields.io/node/v/nodemon"/>
+    <img src="https://img.shields.io/github/last-commit/lucas-felinto/github-followers-management"/>
   </a>
 </p>
 
