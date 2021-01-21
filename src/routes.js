@@ -10,14 +10,6 @@ Routes.get(
   APIController.getUsersNotFollowYouBack
   );
 
-/**
- * @swagger
- * /not-follow-you:
- *  get:
- *    description: Use to request
- */
-
-
 Routes.get(
   '/you-not-follow', 
   APIMiddleware.getApi, 
