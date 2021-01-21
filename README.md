@@ -20,11 +20,11 @@ ___
 ___
 
 <h4 align="center">
-  <a href="#information_source-about">Abou</a>&nbsp;|&nbsp;
+  <a href="#information_source-about">About</a>&nbsp;|&nbsp;
   <a href="#interrobang-reason">Why this project</a>&nbsp;|&nbsp;
   <a href="#seedling-minimal-requirements">Minimal Requirements</a>&nbsp;|&nbsp;
   <a href="#rocket-technologies">Technologies</a>&nbsp;|&nbsp;
-  <a href="#wrench-install">Install</a>&nbsp;|&nbsp;
+  <a href="#wrench-installation">Installation</a>&nbsp;|&nbsp;
   <a href="#arrow_right_hook-requests">Requests</a>&nbsp;|&nbsp;
   <a href="#link-how-to-contribute">How To Contribute</a>&nbsp;|&nbsp;
   <a href="#license">License</a>
@@ -57,7 +57,7 @@ This API was developed using the following technologies:
 - [Swagger](https://swagger.io/docs/specification/about/)
 - [GitHub API](https://docs.github.com/)
 
-## :wrench: Install
+## :wrench: Installation
 ```bash
 # Cloning the repository
 git clone https://github.com/lucas-felinto/github-followers-management.git
@@ -170,11 +170,11 @@ Code: 200 OK
 ## :link: How To Contribute
 
 - Fork the repository
-- Git clone your forked repository
-- Create a branch with your feature
-- Commiy your changes
-- Push your changes
-- Open a pull request in this repository with your branch
+- Git clone your forked repository ```git clone https://github.com/your-user/github-followers-management.git```
+- Create a branch with your feature ```git checkout -b your-branch-name```
+- Commiy your changes ```git add . && git commit -m "your commit changes"```
+- Push your changes ```git push```
+- [Open a pull request in this repository with your branch](https://github.com/lucas-felinto/github-followers-management/pulls)
 
 ## License 
 
