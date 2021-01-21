@@ -5,6 +5,7 @@ const swaggerFile = require('../swagger_output.json');
 
 const app = express();
 
+app.get('/', (req, res) => res.redirect('/api/v1'));
 app.use('/api/v1/documentation', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 app.use('/api/v1', routes);
 
