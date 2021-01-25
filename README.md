@@ -36,8 +36,7 @@ ___
 
 ## :information_source: About
 
-GitHub Followers Management it's an API to manage your GitHub followers and discover more about they. You can find out, for example, users who's follow you, but you don't follow they back, and find out users you follow, but don't follow you back.
-The API uses the GitHub Developers API, it's just provide your GitHub user in the endpoint and discover what you want, you don't need even login at GitHub. 
+GitHub Followers Management it's an API to manage your GitHub followers and discover more about them. You can find out, for example, users who are following you, but you don't follow them back and find out users you follow, but don't follow you back. The API uses the GitHub Developers API, it just provides your GitHub user in the endpoint and discovers what you want, you don't need even to login at GitHub
 
 ## :interrobang: Reason
 
